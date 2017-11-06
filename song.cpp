@@ -12,8 +12,8 @@ Song::Song() {
 ostream& operator << (ostream& os, const Song& s) {
 
   os << "Title: " << s.title << std::endl;
-  os << "Artist: " << s.artist << std::endl;
-  os << "Category: " << s.category << std::endl;
+  os << "Artist: " << s.artist <<  std::endl;
+  os << "Category: " << s.category <<  std::endl;
   os << "Size: " << s.size << std::endl;
   return os;
 // this isn't properly formatted output yet

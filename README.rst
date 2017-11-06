@@ -21,8 +21,27 @@ were not declared in this scope. Since the ostream operator is a friend function
 and not being called from within the object itself, you have to specify which 
 member data to access. 
 
-std:: cout << objectName.memberData; 
+std::cout << objectName.memberData; 
 
 
-3.)
+3.) I was defining my insertion operator as if it were a show() function,
+forgetting to load the output into my ostream object and then return it.
+
+from:
+std::cout << objectName.memberData
+
+to:
+os << objectName.memberData
+return os;
+
+I'm still only able to output the value "1".
+
+
+4.) I was attempting to call the default constuctor for a Song object by using
+
+Song s();
+
+but it should have been 
+
+Song s;
 
