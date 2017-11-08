@@ -1,8 +1,12 @@
-                        Project 4 - PLAYLIST CLASS
+
+///////////////////////////////////////////////////////////////
+            COP 3330 ASSIGNMENT 4 - PLAYLIST CLASS
+///////////////////////////////////////////////////////////////
 
 
-
-        BUGLIST
+///////////////////////////////////////////////////////////////
+                        BUGLIST
+///////////////////////////////////////////////////////////////
 
 1.) In my attempt to define the default constuctor for song.cpp, I have already
 encountered my first issue. I cannot initialize the character arrays for 
@@ -49,5 +53,13 @@ Song s;
                         STATUS
 ///////////////////////////////////////////////////////////////
 
-The ostream operator confirms the functionality of my set function.
-The enumeration appears as a numerical value rather than a genre style
+The Playlist class has working member functions for the following:
+Playlist()
+add()
+show()
+resize()
+expand()
+shrink()
+~Playlist()
+
+
