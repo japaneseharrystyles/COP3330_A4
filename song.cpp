@@ -1,6 +1,9 @@
 #include "song.h"
 #include <cstring>
 #include <iostream>
+#include <iomanip>
+
+///////////// CONSTRUCTOR ///////////////
 
 Song::Song() {
   title[0] = '\0';
@@ -9,19 +12,20 @@ Song::Song() {
   size = 0;
 }
 
+/////////// INSERTION OPERATOR //////////
+
 ostream& operator << (ostream& os, const Song& s) {
 
-  os << "Title: " << s.title << std::endl;
-  os << "Artist: " << s.artist <<  std::endl;
-  os << "Category: " << s.category <<  std::endl;
-  os << "Size: " << s.size << std::endl;
+  os << setw(39) << s.title;
+  os << setw(24) << s.artist;
+  os << setw(15) << s.category;
+  os << setw(10) << s.size;
   return os;
-// this isn't properly formatted output yet
-// it would be hard to make adjustments since any song
-// object would currently contain empty title and artist strings
-//
+
 //  ******* FORMAT LATER *******
 }
+
+/////////// SETTER FUNCTION /////////////
 
 void Song::Set(const char* t, const char* a, Style st, int sz) {
   strcpy (title, t);
@@ -30,3 +34,20 @@ void Song::Set(const char* t, const char* a, Style st, int sz) {
   size = sz;
 }
 
+/////////// GETTER FUNCTIONS ////////////
+
+const char* Song::GetTitle() const {
+return title;
+}
+
+const char* Song::GetArtist() const {
+return artist;
+}
+
+Style Song::GetCategory() const {
+return category;
+}
+
+int Song::GetSize() const {
+return size;
+}

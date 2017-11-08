@@ -45,3 +45,9 @@ but it should have been
 
 Song s;
 
+///////////////////////////////////////////////////////////////
+                        STATUS
+///////////////////////////////////////////////////////////////
+
+The ostream operator confirms the functionality of my set function.
+The enumeration appears as a numerical value rather than a genre style
