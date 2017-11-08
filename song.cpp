@@ -18,7 +18,21 @@ ostream& operator << (ostream& os, const Song& s) {
 
   os << setw(39) << s.title;
   os << setw(24) << s.artist;
-  os << setw(15) << s.category;
+  os << setw(15); 
+  
+  if (s.category == 0)
+    os << "Pop";
+  else if (s.category == 1)
+    os << "Rock";
+  else if (s.category == 2)
+    os << "Alt";
+  else if (s.category == 3)
+    os << "Ctry";
+  else if (s.category == 4)
+    os << "HH";
+  else if (s.category == 5)
+    os << "Par";
+
   os << setw(10) << s.size;
   return os;
 
