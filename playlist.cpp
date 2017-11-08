@@ -14,19 +14,19 @@ Playlist::~Playlist () {
 /////// MENU FUNCTIONS ///////
 
 void Playlist::add (const char* t, const char* a, Style c, int z) {
-
-Song s;
-s.Set(t, a, c, z);
-queue[qSize] = s;
-qSize++;
-resize();
-
+  Song s;
+  s.Set(t, a, c, z);
+  queue[qSize] = s;
+  qSize++;
+  resize();
 }
 void Playlist::find (const char* t) {
 }
 void Playlist::remove (const char* t) {
 }
 void Playlist::show () {
+  for (int i = 0; i < qSize; i++)
+    std::cout << queue[i] << std::endl;
 }
 void Playlist::cat () {
 }
@@ -44,10 +44,14 @@ void Playlist::exit () {
 // shrink - reduce array capacity
 
 void Playlist::resize () {
-  if (qSize == qCap)
+  if (qSize == qCap){
     expand();
-  if (qSize <= qCap - 5)
+    std::cout << "\nArray being resized to " << qCap << "allocated slots\n";
+  }
+  if (qSize <= qCap - 5){
     shrink();
+    std::cout << "\nArray being resized to " << qCap << "allocated slots\n";
+  }
 }
 
 void Playlist::expand () {
