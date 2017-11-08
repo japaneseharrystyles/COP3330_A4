@@ -10,14 +10,14 @@ public:
   Playlist();		//	CONSTRUCTOR
   ~Playlist();		//	DECONSTUCTOR
 
-  void add();		//	A
-  void find();		//	F
-  void remove();	//	D
-  void show();		//	S
-  void cat();		//	C
-  void size();		//	Z
-  void menu();		//	M
-  void exit();		//	X
+  void add(const char*, const char*, Style, int);	//	A
+  void find(const char*);				//	F
+  void remove(const char*);				//	D
+  void show();						//	S
+  void cat();						//	C
+  void size();						//	Z
+  void menu();						//	M
+  void exit();						//	X
 
 
 private:
