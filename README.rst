@@ -49,6 +49,13 @@ but it should have been
 
 Song s;
 
+5.) I was receiving a Double Free / Corruption error during runtime.
+In my resizing functions, I noticed that the temporary Song arrays being
+allocated within the scope of the function were not being explicitly deallocated.
+I thought I was fixing a memory leak I had missed previously by deleting the holders,
+but this turned out to be the source of my problem. I'm not fully sure why I don't need
+to deallocate thise memory, perhaps it is resolved when the function is resolved, since
+the scope is more local than that of my member array
 ///////////////////////////////////////////////////////////////
                         STATUS
 ///////////////////////////////////////////////////////////////

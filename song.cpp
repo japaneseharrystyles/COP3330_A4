@@ -34,6 +34,7 @@ ostream& operator << (ostream& os, const Song& s) {
     os << "Par";
 
   os << setw(10) << s.size;
+  os << std::endl;
   return os;
 
 //  ******* FORMAT LATER *******

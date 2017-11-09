@@ -14,7 +14,7 @@ public:
   void find(const char*);				//	F
   void remove(const char*);				//	D
   void show();						//	S
-  void cat();						//	C
+  void cat(Style);						//	C
   void size();						//	Z
   void menu();						//	M
   void exit();						//	X

@@ -39,9 +39,12 @@ void Playlist::remove (const char* t) {
 }
 void Playlist::show () {
   for (int i = 0; i < qSize; i++)
-    std::cout << queue[i] << std::endl;
+    std::cout << queue[i];
 }
-void Playlist::cat () {
+void Playlist::cat (Style c) {
+  for (int i = 0; i < qSize; i++)
+    if (queue[i].GetCategory() == c)
+      std::cout << queue[i];
 }
 void Playlist::size () {
 }
