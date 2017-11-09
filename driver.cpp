@@ -15,6 +15,7 @@ p.remove("last");
 p.remove("wow");
 p.remove("meow");
 p.show();
+p.size();
 //Song s;
 //s.Set("shadow", "tristen", ROCK, 100);
 }
