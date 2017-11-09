@@ -56,10 +56,16 @@ Song s;
 The Playlist class has working member functions for the following:
 Playlist()
 add()
+find()
 show()
 resize()
 expand()
 shrink()
 ~Playlist()
 
-
+The Playlist class still needs implementation for the following:
+remove()
+cat()
+size()
+menu()
+exit()

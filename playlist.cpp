@@ -1,9 +1,10 @@
 #include "playlist.h"
+#include <cstring>
 
 Playlist::Playlist () {
 
   qSize = 0;
-  qCap = 4;
+  qCap = 5;
   queue = new Song[qCap];
 }
 
@@ -14,13 +15,25 @@ Playlist::~Playlist () {
 /////// MENU FUNCTIONS ///////
 
 void Playlist::add (const char* t, const char* a, Style c, int z) {
+  if (qSize == qCap)
+    expand();
   Song s;
   s.Set(t, a, c, z);
   queue[qSize] = s;
   qSize++;
-  resize();
 }
-void Playlist::find (const char* t) {
+void Playlist::find (const char* s) {
+  for (int i = 0; i < qSize; i++)
+    if (strcmp(queue[i].GetTitle(), s) == 0) {
+      std::cout << "TITLE MATCHES: \n";
+      std::cout << queue[i];
+    }
+  for (int i = 0; i < qSize; i++)
+    if (strcmp(queue[i].GetArtist(), s) == 0) {
+      std::cout << "ARTIST MATCHES: \n";
+      std::cout << queue[i];
+    }
+
 }
 void Playlist::remove (const char* t) {
 }
@@ -39,28 +52,17 @@ void Playlist::exit () {
 
 ////// HELPER FUNCTIONS //////
 
-// resize - check if resizing is needed, then call expand() or shrink()
 // expand - copy array into a new array that has more capacity
 // shrink - reduce array capacity
 
-void Playlist::resize () {
-  if (qSize == qCap){
-    expand();
-    std::cout << "\nArray being resized to " << qCap << "allocated slots\n";
-  }
-  if (qSize <= qCap - 5){
-    shrink();
-    std::cout << "\nArray being resized to " << qCap << "allocated slots\n";
-  }
-}
-
 void Playlist::expand () {
-  qCap = qSize + 4;
+  qCap = qSize + 5;
   Song *temp = new Song[qCap];
   for (int i = 0; i < qSize; i++)
     temp[i] = queue[i];
   delete[] queue;
   queue = temp;
+  std::cout << "Array being resized to: " << qCap << " allocated slots \n";
 }
 
 void Playlist::shrink () {

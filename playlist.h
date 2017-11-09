@@ -27,7 +27,6 @@ private:
   int qCap;	// capacity of array
   int qSize;	// # of songs in array
 
-  void resize();
   void expand();
   void shrink();
 
