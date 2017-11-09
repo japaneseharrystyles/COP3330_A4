@@ -36,6 +36,21 @@ void Playlist::find (const char* s) {
 
 }
 void Playlist::remove (const char* t) {
+  int rmIndex = -1;
+
+  for (int i = 0; i < qSize; i++)
+    if (strcmp(queue[i].GetTitle(), t) == 0)
+      rmIndex = i;  
+  if (rmIndex != -1){
+    for (int j = rmIndex+1; j < qSize; j++)
+      queue[j-1] = queue[j];
+    qSize--;
+    if (qSize < qCap - 4)
+      shrink();
+  }
+
+  else if (rmIndex == -1)
+    std::cout << "We could not find a song with that title.\n";
 }
 void Playlist::show () {
   for (int i = 0; i < qSize; i++)
@@ -75,4 +90,5 @@ void Playlist::shrink () {
     temp[i] = queue[i];
   delete[] queue;
   queue = temp;
+  std::cout << "Array being resized to: " << qCap << " allocated slots \n";
 }
