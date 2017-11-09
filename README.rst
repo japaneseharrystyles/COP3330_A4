@@ -75,6 +75,11 @@ to
 
 int total = 0;
 
+8.) Not really a coding bug so much as a conceptual bug. I don't understand how to write
+an exit function. I'm just going to handle exit within the menu.cpp, which seems like
+a reasonable time to handle exiting.
+
+
 
 ///////////////////////////////////////////////////////////////
                         STATUS
@@ -96,17 +101,10 @@ cat()
 
 size()
 
-resize()
+menu()
 
 expand()
 
 shrink()
 
 ~Playlist()
-
-
-The Playlist class still needs implementation for the following:
-
-menu()
-
-exit()

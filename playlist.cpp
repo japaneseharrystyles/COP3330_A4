@@ -68,8 +68,14 @@ void Playlist::size () {
   std::cout << "The Playlist's total storage size is: " << total << " kilobytes." << std::endl;
 }
 void Playlist::menu () {
-}
-void Playlist::exit () {
+  std::cout <<"A:\tAdd a song to the playlist\n";
+  std::cout <<"F:\tFind a song in the playlist\n";
+  std::cout <<"D:\tDelete a song from the playlist\n";
+  std::cout <<"S:\tShow the entire playlist\n";
+  std::cout <<"C:\tCategory Summary\n";
+  std::cout <<"Z:\tShow Playlist size\n";
+  std::cout <<"M:\tShow this menu\n";
+  std::cout <<"X:\tExit the program\n";
 }
 
 ////// HELPER FUNCTIONS //////
