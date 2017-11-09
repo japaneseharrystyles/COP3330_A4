@@ -62,7 +62,7 @@ void Playlist::cat (Style c) {
       std::cout << queue[i];
 }
 void Playlist::size () {
-  int total;
+  int total = 0;
   for (int i = 0; i < qSize; i++)
     total += queue[i].GetSize();
   std::cout << "The Playlist's total storage size is: " << total << " kilobytes." << std::endl;

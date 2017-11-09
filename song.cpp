@@ -16,6 +16,9 @@ Song::Song() {
 
 ostream& operator << (ostream& os, const Song& s) {
 
+  double KB = static_cast<int>(s.size);
+  double MB = KB / 1000;
+
   os << setw(39) << s.title;
   os << setw(24) << s.artist;
   os << setw(15); 
@@ -32,8 +35,8 @@ ostream& operator << (ostream& os, const Song& s) {
     os << "HH";
   else if (s.category == 5)
     os << "Par";
-
-  os << setw(10) << s.size;
+  os << setw(10);
+  os << setprecision(1) << fixed << MB;
   os << std::endl;
   return os;
 

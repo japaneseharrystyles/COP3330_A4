@@ -56,6 +56,26 @@ I thought I was fixing a memory leak I had missed previously by deleting the hol
 but this turned out to be the source of my problem. I'm not fully sure why I don't need
 to deallocate thise memory, perhaps it is resolved when the function is resolved, since
 the scope is more local than that of my member array
+
+6.) I had a bit of trouble getting the size formatted to single decimal precision
+I ended up doing a 
+
+double size_in_kilobytes = static_cast<int> s.size
+
+but I don't fully understand the relationship of Base and Derivative classes
+in the context of casting.
+
+7. My size() function was consistently off by 8 kilobytes.
+I changed some value, ran it again, and it was consistently off by 12 kb.
+I had forgotten to initialize the local function integer to 0
+
+int total;
+
+to 
+
+int total = 0;
+
+
 ///////////////////////////////////////////////////////////////
                         STATUS
 ///////////////////////////////////////////////////////////////
